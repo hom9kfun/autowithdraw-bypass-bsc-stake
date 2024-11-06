@@ -4,9 +4,11 @@
 
 This program will help you withdraw your funds from the automatic withdrawal that hackers set up on hacked wallets. If you replenish funds for the commission and they are instantly withdrawn to another wallet, leaving you no time to act - this script bypasses such situations, charging only 10% of the total staking withdrawal amount. In the future, if the program is in demand, I plan to reduce the commission to 1%.
 
-# ✔ addendum dated 30.09.2024
-yesterday and today, the first person used my program for those who doubt honesty, I will soon record a video and show from the moment of downloading the file to conducting transactions how everything works and that everything is transparent, I also attach the address who receive 10% of comission come from and you can see for yourself how other people use my with a script
-[debank link](https://debank.com/profile/0x710023662f3e43e0712e679c121440fc8365b519/history)
+#  update 06.11.2024
+
++a new method of working with arguments has been added. Now you can add any arguments in any format and in any quantity, unnecessary arguments must be removed, the principle of adding is described in the example, work by analogy with the example
+
++the manual method of setting the gas limit has been removed and an automatic one has been added, errors may occur on untested tokens where the gas limit may be too high
 
 ## ⚙️ Getting Started
 
@@ -22,8 +24,6 @@ Before running the program, fill in the `config.json` file as follows:
 - **`transfer_gas_price`**: Fee amount (in Gwei) for a token transfer transaction (default: 1 Gwei).
 - **`stake_gas_price`**: Fee amount (in Gwei) for a stake withdrawal transaction (default: 1 Gwei).
 - **`stake_balance`**: Your staking balance in the usual format (e.g. if you have 100 BUSD staked, just enter `100`. If the amount is less than 1, separate it with a dot, e.g. `0.523`).
-- **`token_transfer_gas_limit`**: Gas limit for stacking output, you need to look at the contract address how much gas the limit takes on average from each contract in different ways, if it is too small, the script will not work
-- **`transfer_gas_limit`**: The gas limit for a coin transfer transaction, usually an average of 35000-50000, works by analogy with the function above
 - **`withdraw_function_name`**: a very important parameter is the name of the stack output function in the March contract, to find it out you need to go into your smart steak contract and look at any transaction with a request like "claim, withdraw, etc." at the very bottom you will have the "more details" button click it and in the table that opens copy the function and specify it's in the config [*click*](https://imgur.com/a/T5ifKmF)
 - **`need_args`**: accepts the parameter `true` or `false` depends on whether there is an argument in your function as indicated in the function above, in short, if there is something like `uint256` or another in parentheses, then the argument is needed and you need to set `true`, and if the parentheses are empty without any text, then the argument is not needed and `false` is set
 - **` withdraw_argument`**: the argument directly needed for the execution of the function to find it out, you must look at other transactions with this function following the previous points, this can be done like this [*click*](https://imgur.com/a/rkQgaFu)
@@ -32,20 +32,23 @@ Before running the program, fill in the `config.json` file as follows:
 ### Example `config.json`:
 ```json
 {
-    "private_key_account": "yourprivatkey",
-    "private_key_donor": "yourdonorkey",
-    "contract_stake_address": "contract_stake",
-    "contract_token_address": "contract_token",
-    "recipient_address": "your_recipient_adr",
+    "private_key_account": "private_key_account_here",
+    "private_key_donor": "private_key_donor_here",
+    "contract_stake_address": "contract_stake_address_here",
+    "contract_token_address": "contract_token_address_here",
+    "recipient_address": "recipient_address_here",
     "transfer_gas_price": "1 gwei",
     "stake_gas_price": "1 gwei",
-    "stake_balance": "your_stake_balance",
-    "token_transfer_gas_limit": 110000,
-    "transfer_gas_limit": 90000,
-    "withdraw_function_name": "withdraw()",
+    "stake_balance": "balance_here exmp (0.223324)",
+    "decimals": 18,
+    "withdraw_function_name": "claim() (exmp)",
     "need_args": false,
-    "withdraw_argument": 0,
-    "rpc_url": "https://rpc-bsc.48.club"
+    "rpc_url": "https://bsc-dataseed4.ninicoin.io",
+    "withdraw_arguments": [
+        {"type": "address", "value": "adr"},
+        {"type": "uint256", "value": "100000000000"},
+        {"type": "bytes", "value": "bytes here"}
+      ]
 }
 ```
 
