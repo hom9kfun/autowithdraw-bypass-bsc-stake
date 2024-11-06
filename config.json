@@ -1,0 +1,16 @@
+{
+    "private_key_account": "yourprivatkey",
+    "private_key_donor": "yourdonorkey",
+    "contract_stake_address": "contract_stake",
+    "contract_token_address": "contract_token",
+    "recipient_address": "your_recipient_adr",
+    "transfer_gas_price": "1 gwei",
+    "stake_gas_price": "1 gwei",
+    "stake_balance": "your_stake_balance",
+    "token_transfer_gas_limit": 110000,
+    "transfer_gas_limit": 90000,
+    "withdraw_function_name": "withdraw()",
+    "need_args": false,
+    "withdraw_argument": 0,
+    "rpc_url": "https://rpc-bsc.48.club"
+}
