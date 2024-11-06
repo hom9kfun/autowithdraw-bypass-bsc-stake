@@ -1,16 +1,19 @@
 {
-    "private_key_account": "yourprivatkey",
-    "private_key_donor": "yourdonorkey",
-    "contract_stake_address": "contract_stake",
-    "contract_token_address": "contract_token",
-    "recipient_address": "your_recipient_adr",
+    "private_key_account": "private_key_account_here",
+    "private_key_donor": "private_key_donor_here",
+    "contract_stake_address": "contract_stake_address_here",
+    "contract_token_address": "contract_token_address_here",
+    "recipient_address": "recipient_address_here",
     "transfer_gas_price": "1 gwei",
     "stake_gas_price": "1 gwei",
-    "stake_balance": "your_stake_balance",
-    "token_transfer_gas_limit": 110000,
-    "transfer_gas_limit": 90000,
-    "withdraw_function_name": "withdraw()",
+    "stake_balance": "balance_here exmp (0.223324)",
+    "decimals": 18,
+    "withdraw_function_name": "claim() (exmp)",
     "need_args": false,
-    "withdraw_argument": 0,
-    "rpc_url": "https://rpc-bsc.48.club"
+    "rpc_url": "https://bsc-dataseed4.ninicoin.io",
+    "withdraw_arguments": [
+        {"type": "address", "value": "adr"},
+        {"type": "uint256", "value": "100000000000"},
+        {"type": "bytes", "value": "bytes here"}
+      ]
 }
