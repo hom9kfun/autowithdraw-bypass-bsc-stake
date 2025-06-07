@@ -4,6 +4,10 @@
 
 This program will help you withdraw your funds from the automatic withdrawal that hackers set up on hacked wallets. If you replenish funds for the commission and they are instantly withdrawn to another wallet, leaving you no time to act - this script bypasses such situations, charging only 10% of the total staking withdrawal amount. In the future, if the program is in demand, I plan to reduce the commission to 1%.
 
+#  update 08.06.2025
+
+providers have added a block list of addresses from which funds are often withdrawn. Therefore, most wallets are no longer suitable for this version of the bypass, the new version has already been made and is working in the same mode, you can purchase it in my tg [@nevadalzt](https://t.me/nevadalzt), the price for stake/token bsc is $ 250 with the source code, the golang programming language
+
 #  update 06.11.2024
 
 +a new method of working with arguments has been added. Now you can add any arguments in any format and in any quantity, unnecessary arguments must be removed, the principle of adding is described in the example, work by analogy with the example
